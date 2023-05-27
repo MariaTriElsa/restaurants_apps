@@ -3,15 +3,13 @@ import CONFIG from '../../globals/config';
 const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
-    <img class="resto-item__header__poster" crossorigin="anonymous" src="${
-  CONFIG.BASE_IMAGE_URL + resto.pictureId
-}" alt="Gambar ${resto.name}" tabindex="0"/>
+    <img class="resto-item__header__poster lazyload" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'images/heros/hero-image_4.jpg'}" crossorigin="anonymous" alt="Gambar ${resto.name}">
       <div class="resto-item__header__rating">
         <p>⭐️<span class="resto-item__header__rating__score">${resto.rating}</span></p>
       </div>
     </div>
     <div class="resto-item__content">
-    <h3><a href="/#/detail/${resto.id}">${resto.name}</a></h3>
+    <h3 class="resto__title"><a href="/#/detail/${resto.id}">${resto.name}</a></h3>
       <p>City: ${resto.city}</p>
       <p>Deskription: ${resto.description}</p>
     </div>
@@ -20,7 +18,7 @@ const createRestoItemTemplate = (resto) => `
 
 const createRestoDetailTemplate = (resto) => `
   <h2 class="resto__title">${resto.name}</h2>
-  <img class="resto__poster" crossorigin="anonymous" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+  <img class="resto__poster lazyload" data-src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" crossorigin="anonymous" alt="Gambar ${resto.name}" />
   <div class="resto__info">
     <h3>Information</h3>
     <h4>City: ${resto.city}</h4>

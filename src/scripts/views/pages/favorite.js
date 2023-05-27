@@ -15,6 +15,11 @@ const Like = {
   async afterRender() {
     const restos = await FavoriteRestoIdb.getAllResto();
     const restosContainer = document.querySelector('#restos');
+    if (restos.length === 0) {
+      restosContainer.innerHTML = '<h3 class="nothing">Tidak Ada Favorite</h3>';
+    } else {
+      const totalRest = restos.length;
+    }
 
     restos.forEach((resto) => {
       restosContainer.innerHTML += createRestoItemTemplate(resto);

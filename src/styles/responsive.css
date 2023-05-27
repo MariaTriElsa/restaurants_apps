@@ -1,4 +1,8 @@
 @media screen and (min-width: 650px) {
+  .hero-container {
+    background-image: url('../public/images/heros/hero-image_4-small.jpg');
+    background-size: cover;
+}
   .app-bar {
     grid-template-columns: 1fr auto;
     padding: 8px 32px;
@@ -44,12 +48,26 @@
     grid-column-end: 3;
   }
 }
-
+@media screen and (min-width: 300px) {
+  .hero-container {
+      background-image: url('../public/images/heros/hero-image_4-small.jpg');
+      background-size: cover;
+  }
+}
+@media screen and (min-width: 700px) {
+  .hero-container{
+      background-image: url('../public/images/heros/hero-image_4-large.jpg');
+      background-size: cover;
+  }
+}
 @media screen and (min-width: 800px) {
+  .hero-container {
+    background-image: url('../public/images/heros/hero-image_4-large.jpg');
+    background-size: cover;
+}
   .app-bar .app-bar__brand h1 {
     font-size: 2em;
   }
-
 }
  
 @media screen and (min-width: 850px) {
@@ -60,12 +78,22 @@
 }
  
 @media screen and (min-width: 1200px) {
+  .hero-container{
+    background-image: url('../public/images/heros/hero-image_4-large.jpg');
+    background-size: cover;
+    min-width: 1000px;
+}
   .restos {
     grid-template-columns: repeat(4, 1fr);
   }
 }
  
 @media screen and (min-width: 1600px) {
+  .hero-container{
+    background-image: url('../public/images/heros/hero-image_4-large.jpg');
+    background-size: cover;
+    min-width: 1000px;
+}
   .restos {
       grid-template-columns: repeat(5, 1fr);
   }
